@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0c1b25">
+    <title>FuelFlow | Operations</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <a class="brand" href="#" aria-label="FuelFlow home">
+          <span class="brand-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 21V4.5A1.5 1.5 0 0 1 7.5 3h7A1.5 1.5 0 0 1 16 4.5V21m-10 0h12M9 7h4v4H9zm7-1h1.1a2 2 0 0 1 1.9 2v6a1.5 1.5 0 0 0 3 0V9.5L19 7"/></svg></span>
+          <span class="brand-name">fuel<span>flow</span><small>OPERATIONS</small></span>
+        </a>
+        <div class="workspace-label">WORKSPACE</div>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-item active" data-view="dashboard"><span class="nav-icon">◫</span>Overview</button>
+          <div class="nav-caption">MANAGEMENT</div>
+          <button class="nav-item" data-view="inventory"><span class="nav-icon">▤</span>Fuel inventory<span class="nav-count" id="low-stock-count">0</span></button>
+          <button class="nav-item" data-view="sales"><span class="nav-icon">↗</span>Sales</button>
+          <button class="nav-item" data-view="customers"><span class="nav-icon">♧</span>Customers</button>
+          <button class="nav-item" data-view="purchases"><span class="nav-icon">↙</span>Purchases</button>
+          <button class="nav-item" data-view="expenses"><span class="nav-icon">◉</span>Expenses</button>
+          <div class="nav-caption">COMPANY</div>
+          <button class="nav-item" data-view="staff"><span class="nav-icon">♙</span>Staff</button>
+        </nav>
+        <div class="sidebar-bottom">
+          <div class="support-card">
+            <div class="support-top"><span class="support-icon">✦</span><span>YOUR WORKSPACE</span></div>
+            <p>Keep your fuel operations running smoothly.</p>
+            <span class="plan-tag"><i></i> SQL SERVER</span>
+          </div>
+          <div class="user-card">
+            <div class="avatar">AM</div>
+            <div class="user-details"><strong>Alex Morgan</strong><span>Administrator</span></div>
+            <button class="more-button" aria-label="User menu">•••</button>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="mobile-menu" id="mobile-menu" aria-label="Toggle menu">☰</button>
+          <div class="breadcrumbs"><span>FuelFlow</span><span class="crumb-divider">/</span><strong id="breadcrumb-current">Overview</strong></div>
+          <div class="topbar-actions">
+            <span class="today-label">            <span class="live-dot"></span> Connecting to database</span>
+            <button class="icon-button" aria-label="Notifications">♧<i class="notification-dot"></i></button>
+            <div class="top-avatar">AM</div>
+          </div>
+        </header>
+        <div class="content" id="content"></div>
+        <footer class="footer"><span>FuelFlow Operations</span><span>Waiting for database connection</span></footer>
+      </main>
+    </div>
+    <div class="modal-backdrop" id="modal-backdrop" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-header"><div><span class="eyebrow" id="modal-eyebrow">NEW RECORD</span><h2 id="modal-title">Add record</h2></div><button class="icon-button close-modal" aria-label="Close dialog">×</button></div>
+        <form id="record-form"><div class="form-grid" id="form-fields"></div><div class="modal-actions"><button class="button button-quiet close-modal" type="button">Cancel</button><button class="button button-primary" id="save-button" type="submit">Save record <span>→</span></button></div></form>
+      </section>
+    </div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
